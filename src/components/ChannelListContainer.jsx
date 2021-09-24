@@ -33,6 +33,18 @@ const ChannelListContainer = () => {
       <SideBar />
       <div className='channel-list__list__wrapper'>
           <CompanyHeader />
+          <ChannelSearch />
+          <ChannelList 
+            filters={{}}
+            channelRenderFilterFn={() => {}}
+            List={(listProps) => (
+                // creates a custom Channel List
+                <TeamChannelList 
+                 {... listProps}
+                 type='team'
+                />
+            )}
+          />
       </div>
     </>
   );
